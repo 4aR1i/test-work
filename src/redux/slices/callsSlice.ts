@@ -36,7 +36,7 @@ export const fetchCalls = createAsyncThunk('calls/fetchAllCalls', async (params:
       date_start: dateFrom,
       date_end: dateTo,
       in_out: type === 'Входящие' ? '1' : type === 'Исходящие' ? '0' : '',
-      limit: '100',
+      limit: '50',
     },
     headers: {
       Authorization: 'Bearer testtoken',
