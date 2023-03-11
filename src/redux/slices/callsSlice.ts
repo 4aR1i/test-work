@@ -36,7 +36,7 @@ export const fetchCalls = createAsyncThunk('calls/fetchAllCalls', async (params:
       date_start: dateFrom,
       date_end: dateTo,
       in_out: type === 'Входящие' ? '1' : type === 'Исходящие' ? '0' : '',
-      limit: '20',
+      limit: '100',
     },
     headers: {
       Authorization: 'Bearer testtoken',
@@ -56,8 +56,9 @@ export const callsSlice = createSlice({
     });
     builder.addCase(fetchCalls.fulfilled, (state, action) => {
       state.status = 'success';
+      const arrCalls: Calls[] = [];
       action.payload.map((call: any) =>
-        state.calls.push({
+        arrCalls.push({
           id: call.id,
           type: call.in_out,
           employee: call.person_avatar,
@@ -87,6 +88,8 @@ export const callsSlice = createSlice({
           partnerId: call.partnership_id,
         }),
       );
+      const uniqCalls = new Set(arrCalls);
+      state.calls = Array.from(uniqCalls);
     });
     builder.addCase(fetchCalls.rejected, (state) => {
       state.status = 'error';

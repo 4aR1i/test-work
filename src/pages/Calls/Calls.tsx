@@ -19,11 +19,7 @@ const Calls: React.FC = () => {
   const isMounted = React.useRef(false);
 
   React.useEffect(() => {
-    if (isMounted.current) {
-      dispatch(fetchCalls({ dateFrom, dateTo, type }));
-      isMounted.current = false;
-    }
-    isMounted.current = true;
+    dispatch(fetchCalls({ dateFrom, dateTo, type }));
   }, [dateFrom, dateTo, type]);
 
   return (
