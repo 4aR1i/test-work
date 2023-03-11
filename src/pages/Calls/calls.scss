@@ -1,0 +1,168 @@
+.calls {
+  width: 100%;
+  min-height: 100vh;
+
+  &__wrapper {
+    padding: 0 20px;
+  }
+
+  &__info {
+    max-width: 1440px;
+    width: 100%;
+    background: #fff;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+  }
+
+  &__top {
+    max-width: 1440px;
+    margin: 28px auto 42px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  &__modals {
+    max-width: 1440px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+}
+
+.table {
+  border-collapse: collapse;
+
+  & thead {
+    height: 61px;
+  }
+
+  & thead tr th {
+    font-weight: 400;
+    font-size: 14px;
+    color: #899cb1;
+    text-align: start;
+  }
+
+  & thead tr th:last-child {
+    text-align: end;
+  }
+
+  & thead tr th:nth-child(1) {
+    width: 2.8%;
+  }
+
+  & thead tr th:nth-child(2) {
+    width: 3.7%;
+  }
+
+  & thead tr th:nth-child(3) {
+    width: 6.2%;
+  }
+
+  & thead tr th:nth-child(4) {
+    width: 8.9%;
+  }
+
+  & thead tr th:nth-child(5) {
+    width: 22.6%;
+  }
+
+  & thead tr th:nth-child(6) {
+    width: 14.9%;
+  }
+
+  & thead tr th:nth-child(7) {
+    width: 9.2%;
+  }
+
+  & thead tr th:nth-child(8) {
+    width: 31.7%;
+    padding-right: 40px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    & thead tr th {
+      font-size: 12px;
+    }
+  }
+
+  & tbody tr {
+    height: 65px;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(212, 223, 243, 0.17);
+    }
+
+    &:hover .record-call {
+      display: flex;
+    }
+
+    &:hover .table__duration span {
+      display: none;
+    }
+  }
+
+  & tbody tr td {
+    border-top: 1px solid #eaf0fa;
+  }
+
+  @media screen and (max-width: 1200px) {
+    & tbody tr td {
+      font-size: 12px;
+    }
+  }
+
+  &__checkbox {
+    width: 2.8%;
+  }
+
+  &__type {
+    width: 3.7%;
+  }
+
+  &__time {
+    width: 6.2%;
+    font-weight: 400;
+    font-size: 15px;
+    color: #122945;
+  }
+
+  &__employee {
+    width: 8.9%;
+
+    & img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__phone {
+    width: 22.6%;
+    font-weight: 400;
+    font-size: 15px;
+    color: #122945;
+  }
+
+  &__origin {
+    width: 14.9%;
+    font-weight: 400;
+    font-size: 15px;
+    color: #5e7793;
+  }
+
+  &__grade {
+    width: 9.2%;
+  }
+
+  &__duration {
+    width: 31.7%;
+    padding-right: 40px;
+    text-align: end;
+    font-weight: 400;
+    font-size: 15px;
+    color: #122945;
+  }
+}
